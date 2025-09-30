@@ -1,0 +1,20 @@
+{
+  "name": "complex_ai",
+  "version": "1.0.0",
+  "description": "",
+  "homepage": "https://github.com/matee8/complex_ai#readme",
+  "bugs": {
+    "url": "https://github.com/matee8/complex_ai/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/matee8/complex_ai.git"
+  },
+  "license": "ISC",
+  "author": "",
+  "type": "module",
+  "main": "src/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  }
+}

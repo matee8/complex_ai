@@ -24,3 +24,9 @@ pip install .
 # ... something else will be here but I  don't know how to start a Django
 # application yet.... :,(
 ```
+
+## Project Management
+
+| Platform | Link |
+| :--- | :--- |
+| **Kanban Board** | [Trello Board](https://trello.com/b/FSWXqkuc/complex-ai) |

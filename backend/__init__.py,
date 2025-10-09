@@ -1,0 +1,8 @@
+python - <<'PY'
+import sys, importlib
+print("sys.path[0] =", sys.path[0])
+import complex_ai
+print("complex_ai package =", complex_ai.__file__)
+import complex_ai.urls
+print("Imported complex_ai.urls OK")
+PY

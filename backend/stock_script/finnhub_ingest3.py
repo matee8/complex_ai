@@ -22,10 +22,7 @@ REQUEST_TIMEOUT = 15
 
 # Watchlist
 WATCHLIST_SYMBOLS = [
-    "AAPL", "MSFT", "GOOGL", "AMZN", "META",
-    "TSLA", "NVDA", "JPM", "WMT", "JNJ",
-    "V", "PG", "UNH", "HD", "DIS",
-    "NFLX", "COST", "PYPL", "INTC", "AMD"
+    "AAPL", "MSFT", "GOOGL", "AMZN", "META"
 ]
 
 # ---------- LOGGING ----------

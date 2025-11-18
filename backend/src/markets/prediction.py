@@ -1,6 +1,7 @@
 import logging
 import os
 # import joblib
+from pathlib import Path
 from typing import Dict, List, Optional
 
 import numpy as np
@@ -20,8 +21,9 @@ class StockPredictor:
         self._load_model()
 
     def _load_model(self):
-        base_dir = os.path.dirname(os.path.abspath(__file__))
-        model_path = os.path.join(base_dir, 'models', f'{self.symbol}.keras')
+        base_path = Path(__file__).resolve().parent.parent.parent
+        model_dir = base_path / 'models'
+        model_path = model_dir / f'{self.symbol}.keras'
 
         if os.path.exists(model_path):
             try:

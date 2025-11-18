@@ -10,3 +10,9 @@ dependencies = []
 Homepage = "https://github.com/matee8/complex_ai"
 Repository = "https://github.com/matee8/complex_ai"
 Issues = "https://github.com/matee8/complex_ai/issues"
+
+[dependency-groups]
+dev = [
+    "pylint>=4.0.3",
+    "yapf>=0.43.0",
+]

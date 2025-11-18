@@ -7,7 +7,7 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     # Existing authentication URLs
     path('api/auth/', include('authentication.urls')),
-    
+
     # Include markets app URLs (NEW)
-    path('api/markets/', include('markets.urls')), 
+    path('api/markets/', include('markets.urls')),
 ]

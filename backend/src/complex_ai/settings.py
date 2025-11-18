@@ -13,6 +13,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions','django.contrib.messages','django.contrib.staticfiles',
     'rest_framework','corsheaders',
     'authentication','channels','complex_ai',
+    'markets',
 ]
 
 ASGI_APPLICATION = 'src.complex_ai.asgi.application'

@@ -2,7 +2,7 @@
   "name": "complex_ai",
   "version": "1.0.0",
   "description": "",
-  "homepage": "https://github.com/matee8/complex_ai#readme",
+  "homepage": "/matee8/complex_a",
   "bugs": {
     "url": "https://github.com/matee8/complex_ai/issues"
   },
@@ -12,8 +12,7 @@
   },
   "license": "ISC",
   "author": "",
-  "type": "module",
-  "main": "src/index.js",
+  "main": "src/index.tsx",
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
@@ -21,7 +20,20 @@
     "eject": "react-scripts eject"
   },
   "dependencies": {
+    "axios": "^1.13.1",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
     "react-scripts": "^5.0.1"
+  },
+  "devDependencies": {
+    "react-scripts": "^5.0.1",
+    "typescript": "4.9.5",
+    "@types/node": "^16.18.98",
+    "@types/react": "^18.3.3",
+    "@types/react-dom": "^18.3.0",
+    "tailwindcss": "^3.4.3",
+    "postcss": "^8.5.6",
+    "autoprefixer": "^10.4.22"
   },
   "browserslist": {
     "production": [
@@ -34,5 +46,6 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
-  }
+  },
+  "proxy": "http://localhost:8000"
 }

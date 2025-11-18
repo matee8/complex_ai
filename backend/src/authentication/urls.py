@@ -1,6 +1,6 @@
-# backend/authentication/urls.py
+from authentication.views import RegisterView, login_view, MeView
+
 from django.urls import path
-from .views import RegisterView, login_view, MeView
 from rest_framework_simplejwt.views import TokenRefreshView
 
 urlpatterns = [

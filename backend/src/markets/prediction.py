@@ -21,7 +21,7 @@ class StockPredictor:
 
     def _load_model(self):
         base_dir = os.path.dirname(os.path.abspath(__file__))
-        model_path = os.path.join(base_dir, 'ml_models', f'{self.symbol}.keras')
+        model_path = os.path.join(base_dir, 'models', f'{self.symbol}.keras')
 
         if os.path.exists(model_path):
             try:
@@ -36,7 +36,7 @@ class StockPredictor:
             logger.warning('Model file not found: %s', model_path)
 
         # TODO: Load the Scaler here once received from teammate
-        # scaler_path = os.path.join(base_dir, 'ml_models',
+        # scaler_path = os.path.join(base_dir, 'models',
         #                            f'{self.symbol}_scaler.pkl')
         # self.scaler = joblib.load(scaler_path)
 

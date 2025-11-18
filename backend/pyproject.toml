@@ -4,7 +4,9 @@ version = "0.1.0"
 description = "Add your description here"
 readme = "README.md"
 requires-python = ">=3.10"
-dependencies = []
+dependencies = [
+    "yfinance>=0.2.0, <0.3.0",
+]
 
 [project.urls]
 Homepage = "https://github.com/matee8/complex_ai"

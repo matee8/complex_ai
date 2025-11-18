@@ -12,9 +12,17 @@ INSTALLED_APPS = [
     'django.contrib.admin','django.contrib.auth','django.contrib.contenttypes',
     'django.contrib.sessions','django.contrib.messages','django.contrib.staticfiles',
     'rest_framework','corsheaders',
-    'authentication',
+    'authentication','channels','complex_ai',
     'markets',
 ]
+
+ASGI_APPLICATION = 'src.complex_ai.asgi.application'
+
+CHANNEL_LAYERS = {
+    "default": {
+        "BACKEND": "channels.layers.InMemoryChannelLayer"
+    }
+}
 
 MIDDLEWARE = [
     'corsheaders.middleware.CorsMiddleware',

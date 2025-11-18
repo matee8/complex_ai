@@ -1,11 +1,13 @@
-import yfinance as yf
+import logging
 from typing import List, Dict, Any
+
+import requests
+import yfinance as yf
+
+logger = logging.getLogger(__name__)
 
 
 def get_live_prices(tickers: List[str]) -> List[Dict[str, Any]]:
-    """
-    Fetches real-time stock data for a list of tickers using yfinance.
-    """
     if not tickers:
         return []
 
@@ -34,30 +36,31 @@ def get_live_prices(tickers: List[str]) -> List[Dict[str, Any]]:
                         change_percent = 0
 
                 results.append({
-                    "symbol": symbol,
-                    "name": info.get('shortName', symbol),
-                    "price": current_price,
-                    "changeAmount": change_amount,
-                    "changePercent": change_percent,
+                    'symbol': symbol,
+                    'name': info.get('shortName', symbol),
+                    'price': current_price,
+                    'changeAmount': change_amount,
+                    'changePercent': change_percent,
                 })
-            except Exception as e:
-                results.append({"symbol": symbol, "error": "Data unavailable"})
+            except (KeyError, AttributeError, IndexError, TypeError,
+                    ValueError) as e:
+                logger.warning('Error fetching data for %s: %s',
+                               symbol,
+                               e,
+                               exc_info=True)
+                results.append({'symbol': symbol, 'error': 'Data unavailable'})
 
         return results
 
-    except Exception as e:
-        print(f"yfinance error: {e}")
-        return [{"error": "External API Unavailable"}]
+    except (requests.exceptions.RequestException, OSError) as e:
+        logger.error('yfinance connection error: %s', e, exc_info=True)
+        return [{'error': 'External API Unavailable'}]
 
 
 def get_stock_prediction(symbol: str) -> Dict[str, Any]:
-    """
-    STUB: Future home of Neural Network + LLM logic.
-    """
-
     return {
-        "symbol": symbol,
-        "prediction": "BULLISH",
-        "confidence": 0.85,
-        "ai_analysis": "Neural networks detect a strong momentum pattern..."
+        'symbol': symbol,
+        'prediction': 'BULLISH',
+        'confidence': 0.85,
+        'ai_analysis': 'Neural networks detect a strong momentum pattern...'
     }

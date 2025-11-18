@@ -1,16 +1,17 @@
 from rest_framework.views import APIView
 from rest_framework.response import Response
 from rest_framework import status
+
 from markets.services import get_live_prices
 
 
 class LiveStockPricesAPIView(APIView):
 
-    def get(self, request, *args, **kwargs):
+    def get(self, request):
         tickers_param = request.query_params.get('tickers')
 
         if not tickers_param:
-            return Response({"error": "No tickers provided."},
+            return Response({'error': 'No tickers provided.'},
                             status=status.HTTP_400_BAD_REQUEST)
 
         ticker_list = tickers_param.split(',')

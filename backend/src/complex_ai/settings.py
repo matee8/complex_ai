@@ -71,3 +71,5 @@ DATABASES = {
 }
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+SUPPORTED_STOCKS = ['AAPL', 'MSFT', 'GOOGL', 'AMZN', 'META']
